@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Question Generator</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <!-- HEADER -->
+
+        <section class="header">
+
+            <div class="icon">
+                ?
+            </div>
+
+            <h1>
+                AI Question Generator
+            </h1>
+
+            <p>
+                Generate educational questions with AI
+            </p>
+
+        </section>
+
+
+        <!-- MAIN CARD -->
+
+        <section class="question-card">
+
+
+            <!-- TOPIC -->
+
+            <div class="form-group">
+
+                <label for="topic">
+                    Topic
+                </label>
+
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="e.g. Computer Networks"
+                >
+
+            </div>
+
+
+            <!-- NUMBER OF QUESTIONS -->
+
+            <div class="form-group">
+
+                <label for="numberOfQuestions">
+                    Number of Questions
+                </label>
+
+                <input
+                    type="number"
+                    id="numberOfQuestions"
+                    min="1"
+                    max="20"
+                    value="5"
+                >
+
+            </div>
+
+
+            <!-- DIFFICULTY -->
+
+            <div class="form-group">
+
+                <label for="difficulty">
+                    Difficulty
+                </label>
+
+                <select id="difficulty">
+
+                    <option value="Easy">
+                        Easy
+                    </option>
+
+                    <option value="Medium" selected>
+                        Medium
+                    </option>
+
+                    <option value="Hard">
+                        Hard
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- QUESTION TYPE -->
+
+            <div class="form-group">
+
+                <label for="questionType">
+                    Question Type
+                </label>
+
+                <select id="questionType">
+
+                    <option value="Multiple Choice Questions">
+                        Multiple Choice Questions
+                    </option>
+
+                    <option value="Short Answer Questions">
+                        Short Answer Questions
+                    </option>
+
+                    <option value="Long Answer Questions">
+                        Long Answer Questions
+                    </option>
+
+                    <option value="Interview Questions">
+                        Interview Questions
+                    </option>
+
+                    <option value="Mixed Questions">
+                        Mixed Questions
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ADDITIONAL INSTRUCTIONS -->
+
+            <div class="form-group">
+
+                <div class="label-row">
+
+                    <label for="additionalInstructions">
+                        Additional Instructions
+                    </label>
+
+                    <span id="characterCount">
+                        0 / 2000
+                    </span>
+
+                </div>
+
+                <textarea
+                    id="additionalInstructions"
+                    maxlength="2000"
+                    placeholder="e.g. Focus on TCP, UDP and routing..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- GENERATE BUTTON -->
+
+            <button
+                id="generateButton"
+                onclick="generateQuestions()"
+            >
+
+                Generate Questions
+
+            </button>
+
+
+            <!-- LOADING -->
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="spinner"></div>
+
+                <p>
+                    Generating questions...
+                </p>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="errorMessage"
+                class="error hidden"
+            ></div>
+
+
+            <!-- RESULT -->
+
+            <div
+                id="resultSection"
+                class="result-section hidden"
+            >
+
+                <div class="result-header">
+
+                    <h2>
+                        Generated Questions
+                    </h2>
+
+                    <button
+                        id="copyButton"
+                        class="copy-button"
+                        onclick="copyQuestions()"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="questionsOutput"
+                    class="questions-output"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
